@@ -12,7 +12,7 @@ const App = () => {
 
 
   }
-  function gettitle(title) {
+  function getTitle(title) {
 
     if (title) {
 
@@ -22,19 +22,44 @@ const App = () => {
 
   }
 
+  var user = {
 
+    name: "akansha",
+    age: 28,
+    location: 'India',
+
+  }
+
+
+  function getName(name) {
+
+    if (name) {
+
+      return name;
+    }
+
+    else {
+
+      return 'unknown';
+    }
+  }
 
 
   return (
-
-
     <div>
+
+
+      <h1>{user.name}</h1>
+      {user.age}
+      {getName(user.name)}
+
+
 
 
       <p>{app.title ? app.title : "anonymous"}</p>
       <p>{app.subtitle}</p>
-      <p>{gettitle(app.title)}</p>
-      {app.age >= 28 && <p>{app.age}</p>}
+      <p>{getTitle(app.title)}</p>
+      {user.age >= 28 && <p>{user.age}</p>}
 
       <ol>
         <li>item one</li>
@@ -44,13 +69,6 @@ const App = () => {
 
     </div>
   )
-
-
-
-
-
-
-
 
 
 }
