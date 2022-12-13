@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+const App = () => {
+
+  var app = {
+
+
+    
+    subtitle: "put your life in the hands of a computer",
+
+
+
+  }
+  function gettitle(title) {
+
+    if (title) {
+
+      return title;
+    }
+
+    else {
+
+
+      return 'unknown';
+    }
+  }
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+    <div>
+
+
+      <p>{app.title}</p>
+      <p>{app.subtitle}</p>
+      <p>{gettitle(app.title)}</p>
+
+      <ol>
+        <li>item one</li>
+        <li>item two</li>
+
+      </ol>
+
     </div>
-  );
+  )
+
+
+
+
+
+
+
+
+
 }
 
 export default App;
