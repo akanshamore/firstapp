@@ -4,7 +4,6 @@ const App = () => {
 
   var app = {
 
-
     
     subtitle: "put your life in the hands of a computer",
 
@@ -18,11 +17,7 @@ const App = () => {
       return title;
     }
 
-    else {
-
-
-      return 'unknown';
-    }
+    
   }
 
 
@@ -34,7 +29,7 @@ const App = () => {
     <div>
 
 
-      <p>{app.title}</p>
+      <p>{app.title? app.title : "anonymous"}</p>
       <p>{app.subtitle}</p>
       <p>{gettitle(app.title)}</p>
 
