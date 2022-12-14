@@ -1,33 +1,23 @@
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 //render new p tag if options.length > 0 "here are your options" "no options"
-const App = () => {
 
 
-  let count = 0;
-  const addOne = () =>{
-    console.log('addOne');
+const App=()=> { 
+const onformSubmit= (e)=>{
+e.preventDefault();
+console.log('form submitted');
+};
+const user = {
 
-  };
-    const minusOne = () =>{
 
-      console.log('minusOne');
-    };
-  const resetNum =() =>{
+ 
+title: "indecision app",
+subtitle: "put your life in the hands of a computer",
+options: "Here are your options"
 
-    console.log('resetNum');
-  };
-  const template = (
-    <div>
-     <h1>Count: {count}</h1>
-      <button onClick= {addOne}>+1</button>
-      <button onClick = {minusOne}>-1</button>
-      <button onClick = {resetNum}>Reset</button>
-    </div >
-     
-      
-    
-  );
+
+};
 
 
 
@@ -36,14 +26,28 @@ const App = () => {
   return (
 
     <div>
+<p>{user.title}</p>
+<p>{user.subtitle}</p>
+<p>{user.options}</p>
+<ol>
 
- {template}
+  <li>item 1 </li>
+  <li>item 2</li>
+</ol>
+<form onSubmit = {onformSubmit}>
+<input type = "text" name = "options"/>
+
+<button>Add Option</button>
+
+
+</form>
+
+ 
 
       
     </div>
   )
+  };
 
-
-}
 
 export default App;
