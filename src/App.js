@@ -1,72 +1,45 @@
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-
+//render new p tag if options.length > 0 "here are your options" "no options"
 const App = () => {
 
-  var app = {
+
+  let count = 0;
+  const addOne = () =>{
+    console.log('addOne');
+
+  };
+    const minusOne = () =>{
+
+      console.log('minusOne');
+    };
+  const resetNum =() =>{
+
+    console.log('resetNum');
+  };
+  const template = (
+    <div>
+     <h1>Count: {count}</h1>
+      <button onClick= {addOne}>+1</button>
+      <button onClick = {minusOne}>-1</button>
+      <button onClick = {resetNum}>Reset</button>
+    </div >
+     
+      
+    
+  );
 
 
-    subtitle: "put your life in the hands of a computer",
-    age: 26,
 
-
-
-  }
-  function getTitle(title) {
-
-    if (title) {
-
-      return title;
-    }
-
-
-  }
-
-  var user = {
-
-    name: "akansha",
-    age: 28,
-    location: 'India',
-
-  }
-
-
-  function getName(name) {
-
-    if (name) {
-
-      return name;
-    }
-
-    else {
-
-      return 'unknown';
-    }
-  }
 
 
   return (
+
     <div>
 
+ {template}
 
-      <h1>{user.name}</h1>
-      {user.age}
-      {getName(user.name)}
-
-
-
-
-      <p>{app.title ? app.title : "anonymous"}</p>
-      <p>{app.subtitle}</p>
-      <p>{getTitle(app.title)}</p>
-      {user.age >= 28 && <p>{user.age}</p>}
-
-      <ol>
-        <li>item one</li>
-        <li>item two</li>
-
-      </ol>
-
+      
     </div>
   )
 
